@@ -6,8 +6,6 @@
 # Можно расставлять сколько угодно скобок, надо найти всевозможные расстановки скобок при которых равенство становится верным
 # Взято из сообщества канала HashCoder (https://www.youtube.com/channel/UC-fVGFZ_v29h4yKShNBDMsg)
 # https://www.youtube.com/channel/UC-fVGFZ_v29h4yKShNBDMsg/community?lb=UgkxcRjdXPTTyNDlv19TPP2NE4eRF5AhP7-k
-from collections import namedtuple
-
 FREE_FACTORS = [3, 4, 5, 6, 8, 9, 10]
 ALL_FACTORS = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 
