@@ -14,7 +14,7 @@
 from pprint import pprint
 
 
-def brutforce(x: tuple = ()) -> list:
+def brutforce(x: tuple = (), *, limited=True) -> list:
     result = []
     if len(x) == 7:
         oak = x[0] * 100 + x[1] * 10 + x[2]
@@ -24,9 +24,12 @@ def brutforce(x: tuple = ()) -> list:
         else:
             return []
     for xi in range(0, 10):
-        # if not (xi in x):
-        if not (xi in x) and ((xi != 0) or ((len(x) != 0) and (len(x) != 3))):
-            result.extend(brutforce(tuple(list(x)+[xi])))
+        if limited:
+            if not (xi in x) and ((xi != 0) or ((len(x) != 0) and (len(x) != 3))):
+                result.extend(brutforce(tuple(list(x)+[xi]), limited=limited))
+        else:
+            if not (xi in x):
+                result.extend(brutforce(tuple(list(x) + [xi]), limited=limited))
     return result
 
 
