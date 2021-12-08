@@ -23,7 +23,7 @@ def brutforce(x: tuple = ()) -> list:
             return [(oak, grove // oak, grove)]
         else:
             return []
-    for xi in range(0, 9):
+    for xi in range(0, 10):
         # if not (xi in x):
         if not (xi in x) and ((xi != 0) or ((len(x) != 0) and (len(x) != 3))):
             result.extend(brutforce(tuple(list(x)+[xi])))
