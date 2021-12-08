@@ -24,14 +24,26 @@ def brutforce(x: tuple = ()) -> list:
         else:
             return []
     for xi in range(0, 9):
-        if not (xi in x):
-        # if not (xi in x) and ((xi != 0) or ((len(x) != 0) and (len(x) != 3))):
+        # if not (xi in x):
+        if not (xi in x) and ((xi != 0) or ((len(x) != 0) and (len(x) != 3))):
             result.extend(brutforce(tuple(list(x)+[xi])))
     return result
 
 
 combinate = brutforce()
 pprint(combinate)
+min_oaks = min([i[1] for i in combinate])
+max_oaks = max([i[1] for i in combinate])
+print(30 * '-')
 print(f'Count = {(len(combinate))}')
-print(f'Minimum oaks = {min([i[1] for i in combinate])}')
-print(f'Maximum oaks = {max([i[1] for i in combinate])}')
+print(30 * '=')
+print(f'Minimum oaks = {min_oaks}')
+for variant in combinate:
+    if variant[1] == min_oaks:
+        print(variant)
+print(30 * '*')
+print(f'Maximum oaks = {max_oaks}')
+for variant in combinate:
+    if variant[1] == max_oaks:
+        print(variant)
+print(30 * '=')
